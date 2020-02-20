@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -71,6 +71,9 @@ module.exports = {
               sourceMap: isDevelopment,
             },
           },
+          {
+            loader: 'resolve-url-loader',
+          },
         ],
       },
       {
@@ -94,9 +97,6 @@ module.exports = {
         use: [
           {
             loader: 'url-loader',
-            options: {
-              limit: false,
-            },
           },
         ],
       },
@@ -143,7 +143,7 @@ module.exports = {
       title: 'Hello Webpack bundled JavaScript Project',
       template: './src/index.html',
     }),
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
   ],
   devServer: {
     contentBase: './dist',
