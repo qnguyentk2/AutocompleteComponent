@@ -1,0 +1,64 @@
+@import '@assets/styles/fonts.scss';
+// @import '@assets/styles/colors.scss';
+
+.Autocomplete {
+  padding: 150px 420px 0 420px;
+  position: relative;
+
+  input {
+    width: 600px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 17px 21px 17px 62px;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(72, 72, 72, 0.7);
+    font-family: $font-family-bold;
+  }
+
+  img {
+    position: absolute;
+    margin-top: 17px;
+    margin-right: 21px;
+    margin-left: 15px;
+  }
+}
+
+.suggestions {
+  border: 1px solid #EBEBEB;
+  list-style: none;
+  overflow-y: auto;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 4px 4px;
+  max-height: 480px;
+}
+
+.suggestions li {
+  padding: 29px 21px;
+  font-size: 18px;
+  color: #484848;
+  font-family: $font-family;
+}
+
+.suggestionActive, .suggestions li:hover {
+  background-color: gray;
+  color: black;
+  cursor: pointer;
+  // font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+  padding: 29px 21px;
+  color: black;
+}
+
+.noSuggestions {
+  color: #999;
+  padding: 0.5rem;
+}

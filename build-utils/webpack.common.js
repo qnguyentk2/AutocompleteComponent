@@ -2,13 +2,14 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const DIST_DIR = path.resolve(__dirname, '../', 'dist');
 const SRC_DIR = path.resolve(__dirname, '../', 'src');
+// const DIR = path.resolve(__dirname);
 
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
@@ -20,7 +21,7 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
       {
-        test: /\.css$/i,
+        test: /\.(css)$/i,
         exclude: /node_modules/,
         use: [
           'style-loader',
@@ -33,7 +34,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.s(a|c)ss$/,
+        test: /\.scss$/,
         loader: [
           isDevelopment
             ? 'style-loader'
@@ -46,6 +47,9 @@ module.exports = {
             },
           },
           {
+            loader: 'resolve-url-loader',
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: isDevelopment,
@@ -54,8 +58,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.s(a|c)ss$/,
-        exclude: /\.(s(a|c)ss)$/,
+        test: /\.scss$/,
+        exclude: /\.(scss)$/,
         loader: [
           isDevelopment
             ? 'style-loader'
@@ -86,11 +90,18 @@ module.exports = {
         ],
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'url-loader',
+        test: /\.(jpg|png|woff(2)?|eot|ttf)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: false,
+            },
+          },
+        ],
       },
       {
-        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        test: /\.(jpg|png|ttf|eot|svg)(\?[\s\S]+)?$/,
         include: path.resolve(
           __dirname,
           'node_modules',
@@ -109,6 +120,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss'],
+    alias: {
+      '@components': path.resolve(__dirname, `${SRC_DIR}/components`),
+      '@assets': path.resolve(__dirname, '../', 'assets'),
+    },
   },
   output: {
     path: `${DIST_DIR}`,
@@ -117,6 +132,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    // new MiniCssExtractPlugin({
+    //   filename: '../dist/style.min.css',
+    // }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
@@ -125,7 +143,7 @@ module.exports = {
       title: 'Hello Webpack bundled JavaScript Project',
       template: './src/index.html',
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
   ],
   devServer: {
     contentBase: './dist',
