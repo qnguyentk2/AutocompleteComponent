@@ -3,7 +3,8 @@
     "dev": "webpack-dev-server --config build-utils/webpack.config.js --env.env=dev",
     "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
     "httpServer": "http-server dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -41,6 +42,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "http-server": "^0.12.1",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
