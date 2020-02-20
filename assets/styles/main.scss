@@ -1,3 +1,6 @@
+@import './fonts.scss';
+@import './colors.scss';
+
 * {
   -moz-hyphens: none;
   -ms-hyphens: none;
@@ -88,9 +91,8 @@ video {
 
 body {
   line-height: 1;
-  // background-color: $page-bg-main !important;
-  // font-family: $font-family-main !important;
-  font-family: 'Roboto', sans-serif;
+  background-color: $page-bg-main !important;
+  font-family: $font-family !important;
 }
 
 h1 {
@@ -228,4 +230,3 @@ textarea {
   outline: none;
   border: none;
 }
-

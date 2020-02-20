@@ -1,0 +1,33 @@
+@import '@assets/styles/colors.scss';
+
+.Header {
+  position: absolute;
+  top: 0;
+  width: -webkit-fill-available;
+  // background-color: red;
+  display: flex;
+  padding: 24px 26px 24px 26px;
+  justify-content: space-between;
+  z-index: 9999999;
+}
+
+.leftSide {
+  // background-color: yellow;
+  overflow: hidden;
+}
+
+.leftSide a {
+  float: left;
+  color: $menu-item-text-color;
+  text-align: center;
+  padding: 0 16px;
+  text-decoration: none;
+  font-size: 14px;
+  height: 16px;
+  line-height: 32px;
+  cursor: pointer;
+
+  &.themeMode {
+    margin-top: 5px;
+  }
+}
