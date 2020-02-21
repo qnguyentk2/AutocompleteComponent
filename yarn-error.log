@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add --dev transform-es2015-modules-commonjs
+  /usr/local/bin/node /usr/local/bin/yarn add --dev @testing-library
 
 PATH: 
   /Users/xuser/Library/Python/3.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/xuser/Library/Python/3.7/bin/:/Users/quynh.nguyen/go/bin:/Users/quynh.nguyen/go/bin
@@ -14,8 +14,8 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/transform-es2015-modules-commonjs: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66255:18)
+  Error: https://registry.yarnpkg.com/@testing-library: Request "https://registry.yarnpkg.com/@testing-library" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66264:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:129397:22)
       at Request.emit (events.js:182:13)
       at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:130369:10)
@@ -71,6 +71,7 @@ npm manifest:
       "image-webpack-loader": "^6.0.0",
       "jest": "^25.1.0",
       "jest-cli": "^25.1.0",
+      "jest-css-modules-transform": "^4.0.0",
       "mini-css-extract-plugin": "^0.9.0",
       "node-sass": "^4.13.1",
       "prettier": "^1.19.1",
@@ -6692,6 +6693,15 @@ Lockfile:
       pretty-format "^25.1.0"
       realpath-native "^1.1.0"
   
+  jest-css-modules-transform@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/jest-css-modules-transform/-/jest-css-modules-transform-4.0.0.tgz#e4d3cc8dcd82aaa8ebcd4e57e72d785e53946a82"
+    integrity sha512-ULBK3sI8TUlBW0BZDccQEHNKSo6j7My3aU/xtsvvjgmb+6jKMR4dMQImf140ryiq6aU7eiu6ne4RulE4T0Z3RQ==
+    dependencies:
+      camelcase "^5.3.1"
+      postcss "^7.0.26"
+      postcss-nested "^4.2.1"
+  
   jest-diff@^25.1.0:
     version "25.1.0"
     resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-25.1.0.tgz#58b827e63edea1bc80c1de952b80cec9ac50e1ad"
@@ -8717,6 +8727,14 @@ Lockfile:
       icss-utils "^4.0.0"
       postcss "^7.0.6"
   
+  postcss-nested@^4.2.1:
+    version "4.2.1"
+    resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-4.2.1.tgz#4bc2e5b35e3b1e481ff81e23b700da7f82a8b248"
+    integrity sha512-AMayXX8tS0HCp4O4lolp4ygj9wBn32DJWXvG6gCv+ZvJrEa00GUxJcJEEzMh87BIe6FrWdYkpR2cuyqHKrxmXw==
+    dependencies:
+      postcss "^7.0.21"
+      postcss-selector-parser "^6.0.2"
+  
   postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
     version "6.0.2"
     resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.2.tgz#934cf799d016c83411859e09dcecade01286ec5c"
@@ -8740,7 +8758,7 @@ Lockfile:
       source-map "^0.6.1"
       supports-color "^6.1.0"
   
-  postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.23, postcss@^7.0.5, postcss@^7.0.6:
+  postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.21, postcss@^7.0.23, postcss@^7.0.26, postcss@^7.0.5, postcss@^7.0.6:
     version "7.0.27"
     resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.27.tgz#cc67cdc6b0daa375105b7c424a85567345fc54d9"
     integrity sha512-WuQETPMcW9Uf1/22HWUWP9lgsIC+KEHg2kozMflKjbeUtw9ujvFX6QmIfozaErDkmLWS9WEnEdEe6Uo9/BNTdQ==

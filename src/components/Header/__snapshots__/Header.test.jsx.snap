@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test App renders without crashing 1`] = `
+<Header>
+  <div
+    className="Header"
+  >
+    <div>
+      <img
+        alt="logo"
+        src={Object {}}
+      />
+    </div>
+    <div
+      className="leftSide"
+    >
+      <a
+        className="themeMode"
+      >
+        <img
+          alt="theme"
+          src={Object {}}
+        />
+      </a>
+      <a
+        key="Become a host"
+      >
+        Become a host
+      </a>
+      <a
+        key="Help"
+      >
+        Help
+      </a>
+      <a
+        key="Sign up"
+      >
+        Sign up
+      </a>
+      <a
+        key="Log in"
+      >
+        Log in
+      </a>
+    </div>
+  </div>
+</Header>
+`;

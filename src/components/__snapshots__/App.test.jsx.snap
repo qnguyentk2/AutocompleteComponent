@@ -1,18 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test App renders without crashing 1`] = `
-<div
-  className="container"
->
-  <Header />
-  <Autocomplete
-    suggestions={
-      Array [
-        "Hồ Chí Minh",
-        "Hội An",
-        "Hà Nội",
-      ]
-    }
-  />
-</div>
+<GlobalProvider>
+  <ContextConsumer>
+    <Component />
+  </ContextConsumer>
+</GlobalProvider>
 `;

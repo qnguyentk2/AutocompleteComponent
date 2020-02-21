@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import searchIcon from '@assets/imgs/icons/search.svg';
+import searchIconLight from '@assets/imgs/icons/search-light.svg';
 import AutocompleteStyle from './Autocomplete.scss';
 
 const Autocomplete = props => {
-  const { suggestions } = props;
+  const { suggestions, isLightMode } = props;
   const [state, setState] = useState({
     activeSuggestion: 0,
     filteredSuggestions: [],
@@ -112,8 +114,8 @@ const Autocomplete = props => {
   };
 
   return (
-    <div className={AutocompleteStyle.Autocomplete}>
-      <img alt="search" src={searchIcon} />
+    <div className={classnames(AutocompleteStyle.Autocomplete, isLightMode ? '' : AutocompleteStyle.darkMode)}>
+      <img alt="search" src={isLightMode ? searchIcon : searchIconLight} />
       <input
         type="text"
         onChange={handleChangeValue}
@@ -131,8 +133,10 @@ export default Autocomplete;
 
 Autocomplete.propTypes = {
   suggestions: PropTypes.instanceOf(Array),
+  isLightMode: PropTypes.bool
 };
 
 Autocomplete.defaultProps = {
   suggestions: [],
+  isLightMode: true,
 };
