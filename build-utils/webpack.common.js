@@ -119,7 +119,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.scss'],
+    extensions: ['*', '.js', '.jsx', '.scss', '.json'],
     alias: {
       '@components': path.resolve(__dirname, `${SRC_DIR}/components`),
       '@assets': path.resolve(__dirname, '../', 'assets'),
