@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { slide as Menu } from 'react-burger-menu';
+import classNames from 'classnames';
 
 const burgerStyles = {
   bmBurgerButton: {
@@ -25,10 +26,11 @@ const burgerStyles = {
   },
   bmMenuWrap: {
     position: 'fixed',
-    height: '100%'
+    height: '100%',
+    top: 0
   },
   bmMenu: {
-    background: '#373a47',
+    background: 'rgb(98, 101, 113)',
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em'
   },
@@ -37,24 +39,38 @@ const burgerStyles = {
   },
   bmItemList: {
     color: '#b8b7ad',
-    padding: '0.8em'
+    padding: '0.8em',
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
   },
   bmItem: {
-    display: 'inline-block'
+    display: 'inline-block',
+    padding: '10px',
+    fontSize: '18px',
+    color: 'aliceblue',
+    textDecoration: 'unset',
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
+    background: 'rgba(0, 0, 0, 0.3)',
+    top: 0,
+    left: 0
   }
 }
 
-const BurgerMenu = ({ showMenu }) => {
+const menuItemArr = ['Become a host', 'Help', 'Sign up', 'Log in'];
+
+const BurgerMenu = () => {
   return (
     <div>
-      <Menu styles={{...burgerStyles}} outerContainerId="app" disableAutoFocus>
-        <a id="home" className="menu-item" href="/">Home</a>
-        <a id="about" className="menu-item" href="/about">About</a>
-        <a id="contact" className="menu-item" href="/contact">Contact</a>
-        <a onClick={showMenu} className="menu-item--small" href="">Settings</a>
+      <Menu right styles={{...burgerStyles}} outerContainerId="app">
+        {
+          menuItemArr.reverse().map(item => (
+            <a key={item} id={item} className={classNames("menu-item")}>
+              {item}
+            </a>
+          ))
+        }
       </Menu>
     </div>
   )
@@ -63,7 +79,7 @@ const BurgerMenu = ({ showMenu }) => {
 export default BurgerMenu;
 
 BurgerMenu.propTypes = {
-  showMenu: PropTypes.func,
+  // showMenu: PropTypes.func,
 };
 
 BurgerMenu.defaultProps = {

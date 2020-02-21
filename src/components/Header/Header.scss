@@ -1,5 +1,6 @@
 // @import '@assets/styles/colors.scss';
 @import '../../../assets/styles/colors.scss';
+@import '../../../assets/styles/responsive.scss';
 
 .Header {
   position: relative;
@@ -23,17 +24,8 @@
   height: 16px;
   line-height: 32px;
   cursor: pointer;
-
-  &.themeMode {
-    margin-top: 5px;
-  }
 }
 
-// @media only screen and (min-width: 200px) and (max-width: 767px) {
-//   .Header {
-//     .logo {
-//       width: 300%;
-//       padding: 30px;
-//     }
-//   }
-// }
+.themeMode {
+  margin-top: 6px;
+}

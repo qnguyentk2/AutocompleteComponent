@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { isMobile } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 import BurgerMenu from '@components/BurgerMenu/BurgerMenu';
 
@@ -13,24 +13,33 @@ const Header = () => {
   const { isLightMode, handleChangeThemeMode } = useContext(GlobalContext);
   const menuItemArr = ['Become a host', 'Help', 'Sign up', 'Log in'];
 
-  console.log('isMobile: ', isMobile);
-
   const handleShowMenu = (e) => {
     e.preventDefault();
   }
 
-  const renderMenuMobileMode = () => {
-    return <BurgerMenu showMenu={handleShowMenu} />
-  }
-
-  const renderMenuDestopMode = () => (
-    <div className={styles.leftSide}>
+  const renderChangeMode = () => {
+    return (
       <a
         onClick={handleChangeThemeMode}
         className={styles.themeMode}
       >
         <img alt="theme" src={isLightMode ? lightMode : darkMode} />
       </a>
+    )
+  }
+
+  const renderMenuMobileMode = () => {
+    return (
+      <>
+        {renderChangeMode()}
+        <BurgerMenu showMenu={handleShowMenu} />
+      </>
+    )
+  }
+
+  const renderMenuDestopMode = () => (
+    <div className={styles.leftSide}>
+      {renderChangeMode()}
       {menuItemArr.map(item => (
         <a key={item}>{item}</a>
       ))}
@@ -43,7 +52,7 @@ const Header = () => {
         <img className={styles.logo} alt="logo" src={logo} />
       </div>
       {
-        isMobile ? renderMenuMobileMode() : renderMenuDestopMode()
+        isMobileOnly ? renderMenuMobileMode() : renderMenuDestopMode()
       }
       {/* {renderMenuDestopMode()} */}
     </div>
