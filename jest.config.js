@@ -38,7 +38,8 @@ module.exports = {
   moduleNameMapper: {
     "^@src(.*)$": "<rootDir>/src$1",
     "^@components(.*)$": "<rootDir>/src/components$1",
-    "^@assets(.*)$": "<rootDir>/assets$1"
+    "^@assets(.*)$": "<rootDir>/assets$1",
+    "^@contexts(.*)$": "<rootDir>/src/components/contexts$1"
   },
 
   transform: {

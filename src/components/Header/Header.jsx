@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import GlobalContext from '@contexts/GlobalContext';
+
 import logo from '@assets/imgs/icons/logo.svg';
 import lightMode from '@assets/imgs/icons/light-mode.svg';
 import darkMode from '@assets/imgs/icons/dark-mode.svg';
 import styles from './Header.scss';
 
 const Header = () => {
+  const { isLightMode, handleChangeThemeMode } = useContext(GlobalContext);
   const menuItemArr = ['Become a host', 'Help', 'Sign up', 'Log in'];
-  const [isLightMode, setMode] = useState(true);
-  const handleChangeThemeMode = () => {
-    setMode(!isLightMode);
-  };
 
   return (
     <div className={styles.Header}>
@@ -24,7 +23,7 @@ const Header = () => {
           <img alt="theme" src={isLightMode ? lightMode : darkMode} />
         </a>
         {menuItemArr.map(item => (
-          <a>{item}</a>
+          <a key={item}>{item}</a>
         ))}
       </div>
     </div>
