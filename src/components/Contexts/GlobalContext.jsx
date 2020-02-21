@@ -4,14 +4,22 @@ import PropTypes from 'prop-types';
 const GlobalContext = createContext({});
 
 export const GlobalProvider = ({ children }) => {
-  const [isLightMode, setMode] = useState(true)
+  const [isLightMode, setMode] = useState(true);
+  const [isBurgerMenuOpen, setBurgerMenu] = useState(false);
+
   const handleChangeThemeMode = () => {
     setMode(!isLightMode);
   }
 
+  const handleDetectBurgerMenu = (state) => {
+    setBurgerMenu(state.isOpen);
+  }
+
   const dataStore = {
     isLightMode,
-    handleChangeThemeMode
+    handleChangeThemeMode,
+    isBurgerMenuOpen,
+    handleDetectBurgerMenu
   }
 
   return (

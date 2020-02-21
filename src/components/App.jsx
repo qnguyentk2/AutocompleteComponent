@@ -12,9 +12,9 @@ const App = () => (
   <GlobalProvider>
     <GlobalConsumer>
       {props => {
-        const { isLightMode } = props;
+        const { isLightMode, isBurgerMenuOpen } = props;
         return (
-          <div className={classnames(styles.container, isLightMode ? '' : styles.darkMode)}>
+          <div className={classnames(styles.container, isLightMode || isBurgerMenuOpen ? '' : styles.darkMode)}>
             <Header {...props} />
             <Autocomplete {...props} suggestions={suggestions} />
           </div>
@@ -28,8 +28,10 @@ export default App;
 
 App.propTypes = {
   isLightMode: PropTypes.bool,
+  isBurgerMenuOpen: PropTypes.bool
 };
 
 App.defaultProps = {
   isLightMode: true,
+  isBurgerMenuOpen: false
 };

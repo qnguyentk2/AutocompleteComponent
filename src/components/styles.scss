@@ -9,7 +9,14 @@
   min-height: 800px;
 
   @include Responsive(SM) {
-    min-height: 1030px;
+    background-position: 70% 50%;
+  }
+  
+  @include Responsive(XS) {
+    background-position: 70% 50%;
+  }
+  
+  @include Responsive(XXS) {
     background-position: 70% 50%;
 	}
 }
@@ -29,27 +36,3 @@
 .darkMode > div {
   z-index: 100 !important;
 }
-
-// @media only screen and (min-width: 200px) and (max-width: 767px) {
-//   .container {
-//     min-height: 1850px;
-//     // width: 106%;
-//     background-position: 70% 50%;
-//   }
-//   .darkMode::after {
-//     width: 106%;
-//   }
-// }
-
-// @media only screen 
-//     and (device-width : 375px) 
-//     and (device-height : 812px) 
-//     and (-webkit-device-pixel-ratio : 3) { 
-//   .container {
-//     min-height: 2300px;
-//     background-position: 70% 50%;
-//   }
-//   .darkMode::after {
-//     width: 106%;
-//   }
-// }

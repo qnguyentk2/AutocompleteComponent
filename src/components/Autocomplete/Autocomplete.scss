@@ -23,6 +23,14 @@
     @include Responsive(SM) {
       width: 60%;
     }
+
+    @include Responsive(XS) {
+      width: 60%;
+    }
+
+    @include Responsive(XXS) {
+      width: 60%;
+    }
   }
 
   img {
@@ -47,6 +55,14 @@
       max-height: 480px;
 
       @include Responsive(SM) {
+        width: 60%;
+      }
+
+      @include Responsive(XS) {
+        width: 60%;
+      }
+
+      @include Responsive(XXS) {
         width: 60%;
       }
     }
