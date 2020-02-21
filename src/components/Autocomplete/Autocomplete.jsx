@@ -83,26 +83,28 @@ const Autocomplete = props => {
   const renderSuggestionsListComponent = () => {
     if (state.filteredSuggestions.length) {
       return (
-        <ul className={AutocompleteStyle.suggestions}>
-          {state.filteredSuggestions.map((suggestion, index) => {
-            let className;
+        <div className={AutocompleteStyle.wrapper}>
+          <ul className={AutocompleteStyle.suggestions}>
+            {state.filteredSuggestions.map((suggestion, index) => {
+              let className;
 
-            // Flag the active suggestion with a class
-            if (index === state.activeSuggestion) {
-              className = AutocompleteStyle.suggestionActive;
-            }
+              // Flag the active suggestion with a class
+              if (index === state.activeSuggestion) {
+                className = AutocompleteStyle.suggestionActive;
+              }
 
-            return (
-              <li
-                className={className}
-                key={suggestion}
-                onClick={handleSelect}
-              >
-                {suggestion}
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li
+                  className={className}
+                  key={suggestion}
+                  onClick={handleSelect}
+                >
+                  {suggestion}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       );
     }
 
