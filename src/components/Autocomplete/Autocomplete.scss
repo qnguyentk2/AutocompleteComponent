@@ -1,13 +1,14 @@
 // @import '@assets/styles/fonts.scss';
 @import '../../../assets/styles/fonts.scss';
+@import '../../../assets/styles/responsive.scss';
 
 .Autocomplete {
-  padding: 150px 420px 0 420px;
-  position: relative;
+  text-align: center;
+  padding-top: 80px;
 
   input {
-    width: 600px;
-    height: 60px;
+    width: 40%;
+    height: 58px;
     background: #FFFFFF;
     border: 1px solid #EBEBEB;
     box-sizing: border-box;
@@ -18,6 +19,10 @@
     line-height: 23px;
     color: rgba(72, 72, 72, 0.7);
     font-family: $font-family-bold;
+
+    @include Responsive(SM) {
+      width: 60%;
+    }
   }
 
   img {
@@ -27,43 +32,55 @@
     margin-left: 15px;
   }
 
-  .suggestions {
-    border: 1px solid #EBEBEB;
-    list-style: none;
-    overflow-y: auto;
-    background: #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 0px 0px 4px 4px;
-    max-height: 480px;
-  }
-  
-  .suggestions li {
-    padding: 29px 21px;
-    font-size: 18px;
-    color: #484848;
-    font-family: $font-family;
-  }
-  
-  .suggestionActive, .suggestions li:hover {
-    background-color: gray;
-    color: black;
-    cursor: pointer;
-    // font-weight: 700;
-  }
-  
-  .suggestions li:not(:last-of-type) {
-    padding: 29px 21px;
-    color: black;
-  }
-  
-  .noSuggestions {
-    color: #999;
-    padding: 0.5rem;
+  .wrapper {
+    text-align: -webkit-center;
+    .suggestions {
+      text-align: initial;
+      width: 40%;
+      border: 1px solid #EBEBEB;
+      list-style: none;
+      overflow-y: auto;
+      background: #FFFFFF;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 0px 0px 4px 4px;
+      max-height: 480px;
+
+      @include Responsive(SM) {
+        width: 60%;
+      }
+    }
+    
+    .suggestions li {
+      padding: 17px 21px;
+      font-size: 18px;
+      color: #484848;
+      font-family: $font-family;
+    }
+    
+    .suggestionActive, .suggestions li:hover {
+      background-color: gray;
+      color: black;
+      cursor: pointer;
+      // font-weight: 700;
+    }
+    
+    .suggestions li:not(:last-of-type) {
+      padding: 17px 21px;
+      color: black;
+    }
+    
+    .noSuggestions {
+      color: #999;
+      padding: 0.5rem;
+    }
   }
 }
 
 .darkMode {
+  text-align: -webkit-center;
+  position: relative;
+
   input {
     background: #0E0E0E;
     border: 1px solid #565656;
@@ -71,34 +88,71 @@
     border-radius: 4px 4px 0px 0px;
     color: #CDCDCD;
   }
-
-  .suggestions {
-    background: #1B1B1B;
-    border: 1px solid #565656;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 0px 0px 4px 4px;
-  }
-
-  .suggestions li {
-    color: #CDCDCD;
-  }
+  .wrapper {
+    .suggestions {
+      background: #1B1B1B;
+      border: 1px solid #565656;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 0px 0px 4px 4px;
+    }
   
-  .suggestionActive, .suggestions li:hover {
-    background-color: gray;
-    color: black;
-    cursor: pointer;
-    // font-weight: 700;
+    .suggestions li {
+      color: #CDCDCD;
+    }
+    
+    .suggestionActive, .suggestions li:hover {
+      background-color: gray;
+      color: black;
+      cursor: pointer;
+      // font-weight: 700;
+    }
+    
+    .suggestions li:not(:last-of-type) {
+      padding: 17px 21px;
+      color: #CDCDCD;
+    }
+    
+    .noSuggestions {
+      color: #999;
+      padding: 0.5rem;
+    }
   }
-  
-  .suggestions li:not(:last-of-type) {
-    padding: 29px 21px;
-    color: #CDCDCD;
-  }
-  
-  .noSuggestions {
-    color: #999;
-    padding: 0.5rem;
-  }
-  
 }
+
+// @media only screen and (min-width: 200px) and (max-width: 767px) {
+//   .Autocomplete {
+//     padding: 400px 0 0 180px;
+
+//     input {
+//       width: 650px;
+//       height: 100px;
+//       padding-left: 105px;
+//       font-size: 40px;
+//     }
+
+//     img {
+//       margin-top: 20px;
+//       margin-left: 25px;
+//       width: 6%;
+//     }
+
+//     .suggestions {
+//       max-height: 580px;
+//       width: 77.5%;
+//     }
+
+//     .suggestions li {
+//       font-size: 35px;
+//     }
+//   }
+// }
+
+// @media only screen 
+//     and (device-width : 375px) 
+//     and (device-height : 812px) 
+//     and (-webkit-device-pixel-ratio : 3) { 
+//     .Autocomplete {
+//       padding: 400px 0 0 180px;
+//     }
+// }

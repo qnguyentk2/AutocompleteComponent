@@ -1,19 +1,16 @@
 // @import '@assets/styles/colors.scss';
 @import '../../../assets/styles/colors.scss';
+@import '../../../assets/styles/responsive.scss';
 
 .Header {
-  position: absolute;
-  top: 0;
+  position: relative;
   width: -webkit-fill-available;
-  // background-color: red;
   display: flex;
   padding: 24px 26px 24px 26px;
   justify-content: space-between;
-  z-index: 999 !important;
 }
 
 .leftSide {
-  // background-color: yellow;
   overflow: hidden;
 }
 
@@ -27,8 +24,8 @@
   height: 16px;
   line-height: 32px;
   cursor: pointer;
+}
 
-  &.themeMode {
-    margin-top: 5px;
-  }
+.themeMode {
+  margin-top: 6px;
 }

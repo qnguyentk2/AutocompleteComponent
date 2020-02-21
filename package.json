@@ -1,4 +1,7 @@
 {
+  "name": "autocomplete-webpack-react-app",
+  "author": "quynhnguyentk2@gmail.com",
+  "version": "0.1.0",
   "scripts": {
     "dev": "webpack-dev-server --config build-utils/webpack.config.js --env.env=dev",
     "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
@@ -68,6 +71,8 @@
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-burger-menu": "^2.6.13",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.12.0",
     "resolve-url-loader": "^3.1.1"
   }
