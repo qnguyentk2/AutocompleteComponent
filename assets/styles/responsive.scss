@@ -1,3 +1,4 @@
+$XXS:     200px;   
 $XS:     480px;   
 $SM:     768px;  
 $MD:    1024px;   
@@ -6,6 +7,9 @@ $XL:    1170px;
 // media queries
 
 @mixin Responsive($canvas) {
+  @if $canvas == XXS {
+    @media only screen and (min-width: $XXS) { @content; } 
+   }
   @if $canvas == XS {
    @media only screen and (min-width: $XS) { @content; } 
   }

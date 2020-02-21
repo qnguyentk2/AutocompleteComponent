@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import PropTypes from 'prop-types';
 import { slide as Menu } from 'react-burger-menu';
 import classNames from 'classnames';
 
+import GlobalContext from '@contexts/GlobalContext';
+
 const burgerStyles = {
   bmBurgerButton: {
-    position: 'fixed',
+    position: 'relative',
     width: '26px',
     height: '20px',
-    right: '26px',
-    top: '26px'
+    top: '5px'
   },
   bmBurgerBars: {
     background: '#fff'
@@ -61,9 +62,11 @@ const burgerStyles = {
 const menuItemArr = ['Become a host', 'Help', 'Sign up', 'Log in'];
 
 const BurgerMenu = () => {
+  const { handleDetectBurgerMenu } = useContext(GlobalContext);
+
   return (
     <div>
-      <Menu right styles={{...burgerStyles}} outerContainerId="app">
+      <Menu onStateChange={handleDetectBurgerMenu} pageWrapId="app" right styles={{...burgerStyles}} outerContainerId="app">
         {
           menuItemArr.reverse().map(item => (
             <a key={item} id={item} className={classNames("menu-item")}>
@@ -83,5 +86,5 @@ BurgerMenu.propTypes = {
 };
 
 BurgerMenu.defaultProps = {
-  showMenu: () => {},
+  // showMenu: () => {},
 };

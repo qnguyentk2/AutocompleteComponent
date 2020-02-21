@@ -54,7 +54,6 @@ const Header = () => {
       {
         isMobileOnly ? renderMenuMobileMode() : renderMenuDestopMode()
       }
-      {/* {renderMenuDestopMode()} */}
     </div>
   );
 };
