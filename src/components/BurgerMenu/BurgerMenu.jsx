@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-// import PropTypes from 'prop-types';
 import { slide as Menu } from 'react-burger-menu';
-import classNames from 'classnames';
-
+import  FontAwesome from 'react-fontawesome';
+// import classNames from 'classnames';
+import { MENU_ITEMS } from '@const/common';
 import GlobalContext from '@contexts/GlobalContext';
+import BurgerMenuStyles from './BurgerMenu.scss';
 
 const burgerStyles = {
   bmBurgerButton: {
@@ -42,24 +43,23 @@ const burgerStyles = {
     color: '#b8b7ad',
     padding: '0.8em',
     display: 'flex',
-    flexDirection: 'column',
-    textAlign: 'center',
+    flexDirection: 'column'
   },
   bmItem: {
-    display: 'inline-block',
+    display: 'inline-flex',
     padding: '10px',
-    fontSize: '18px',
+    fontSize: '16px',
     color: 'aliceblue',
     textDecoration: 'unset',
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)',
+    background: 'rgba(14, 1, 1, 0.58)',
     top: 0,
     left: 0
   }
 }
 
-const menuItemArr = ['Become a host', 'Help', 'Sign up', 'Log in'];
+MENU_ITEMS.reverse();
 
 const BurgerMenu = () => {
   const { handleDetectBurgerMenu } = useContext(GlobalContext);
@@ -68,10 +68,27 @@ const BurgerMenu = () => {
     <div>
       <Menu onStateChange={handleDetectBurgerMenu} pageWrapId="app" right styles={{...burgerStyles}} outerContainerId="app">
         {
-          menuItemArr.reverse().map(item => (
-            <a key={item} id={item} className={classNames("menu-item")}>
-              {item}
-            </a>
+          MENU_ITEMS.map(item => (
+            <div className={BurgerMenuStyles.itemWrapper}>
+              {
+                item.icon && (
+                  <div className={BurgerMenuStyles.iconWrapper}>
+                    <FontAwesome 
+                      className="super-crazy-colors"
+                      name={item.icon}
+                      size="1.5x"
+                      // spin
+                      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', padding: '9px' }}
+                    />
+                  </div>
+                )
+              }
+              <div className={BurgerMenuStyles.menuItem}>
+                <a key={item.label} id={item.label}>
+                  {item.label.toLocaleUpperCase()}
+                </a>
+              </div>
+            </div>
           ))
         }
       </Menu>

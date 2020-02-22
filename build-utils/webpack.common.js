@@ -124,6 +124,7 @@ module.exports = {
       '@components': path.resolve(__dirname, `${SRC_DIR}/components`),
       '@assets': path.resolve(__dirname, '../', 'assets'),
       '@contexts': path.resolve(__dirname, '../', `${SRC_DIR}/components/Contexts`),
+      '@const': path.resolve(__dirname, '../', `${SRC_DIR}/constans`),
     },
   },
   output: {

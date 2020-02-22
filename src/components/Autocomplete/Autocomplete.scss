@@ -83,14 +83,15 @@
     
     .suggestions li:not(:last-of-type) {
       padding: 17px 21px;
-      color: black;
-    }
-    
-    .noSuggestions {
-      color: #999;
-      padding: 0.5rem;
+      color: darkslategray;
     }
   }
+}
+
+.noSuggestions {
+  color: #5f5959;
+  padding: 0.5rem;
+  margin-top: 20px;
 }
 
 .darkMode {
@@ -135,40 +136,3 @@
     }
   }
 }
-
-// @media only screen and (min-width: 200px) and (max-width: 767px) {
-//   .Autocomplete {
-//     padding: 400px 0 0 180px;
-
-//     input {
-//       width: 650px;
-//       height: 100px;
-//       padding-left: 105px;
-//       font-size: 40px;
-//     }
-
-//     img {
-//       margin-top: 20px;
-//       margin-left: 25px;
-//       width: 6%;
-//     }
-
-//     .suggestions {
-//       max-height: 580px;
-//       width: 77.5%;
-//     }
-
-//     .suggestions li {
-//       font-size: 35px;
-//     }
-//   }
-// }
-
-// @media only screen 
-//     and (device-width : 375px) 
-//     and (device-height : 812px) 
-//     and (-webkit-device-pixel-ratio : 3) { 
-//     .Autocomplete {
-//       padding: 400px 0 0 180px;
-//     }
-// }
