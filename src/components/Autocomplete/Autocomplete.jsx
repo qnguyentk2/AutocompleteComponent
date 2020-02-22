@@ -16,7 +16,7 @@ const Autocomplete = props => {
 
   const handleSelect = e => {
     const { innerText } = e.currentTarget;
-    // Update the user input and reset the rest of the state
+
     setState({
       ...state,
       activeSuggestion: 0,
@@ -45,8 +45,7 @@ const Autocomplete = props => {
   const handleKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = state;
 
-    // User pressed the enter key, update the input and close the
-    // suggestions
+    // key enter
     if (e.keyCode === 13) {
       setState({
         ...state,
@@ -55,7 +54,7 @@ const Autocomplete = props => {
         userInput: filteredSuggestions[activeSuggestion],
       });
     }
-    // User pressed the up arrow, decrement the index
+    // key up
     else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
         return;
@@ -66,7 +65,7 @@ const Autocomplete = props => {
         activeSuggestion: activeSuggestion - 1,
       });
     }
-    // User pressed the down arrow, increment the index
+    // key down
     else if (e.keyCode === 40) {
       if (activeSuggestion - 1 === filteredSuggestions.length) {
         return;
@@ -88,7 +87,6 @@ const Autocomplete = props => {
             {state.filteredSuggestions.map((suggestion, index) => {
               let className;
 
-              // Flag the active suggestion with a class
               if (index === state.activeSuggestion) {
                 className = AutocompleteStyle.suggestionActive;
               }
