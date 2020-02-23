@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test BurgerMenu renders BurgerMenu without crashing 1`] = `
+<div>
+  <Menu
+    bodyClassName=""
+    burgerBarClassName=""
+    burgerButtonClassName=""
+    className=""
+    crossButtonClassName=""
+    crossClassName=""
+    disableAutoFocus={false}
+    disableCloseOnEsc={false}
+    htmlClassName=""
+    id=""
+    itemClassName=""
+    itemListClassName=""
+    menuClassName=""
+    morphShapeClassName=""
+    noOverlay={false}
+    noTransition={false}
+    onIconHoverChange={[Function]}
+    onStateChange={[Function]}
+    outerContainerId="app"
+    overlayClassName=""
+    pageWrapId="app"
+    right={true}
+    styles={
+      Object {
+        "bmBurgerBars": Object {
+          "background": "#fff",
+        },
+        "bmBurgerBarsHover": Object {
+          "background": "#a90000",
+        },
+        "bmBurgerButton": Object {
+          "height": "20px",
+          "position": "relative",
+          "top": "5px",
+          "width": "26px",
+        },
+        "bmCross": Object {
+          "background": "#bdc3c7",
+        },
+        "bmCrossButton": Object {
+          "height": "24px",
+          "width": "24px",
+        },
+        "bmItem": Object {
+          "color": "aliceblue",
+          "display": "inline-flex",
+          "fontSize": "16px",
+          "padding": "10px",
+          "textDecoration": "unset",
+        },
+        "bmItemList": Object {
+          "color": "#b8b7ad",
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "0.8em",
+        },
+        "bmMenu": Object {
+          "background": "rgb(98, 101, 113)",
+          "fontSize": "1.15em",
+          "padding": "2.5em 1.5em 0",
+        },
+        "bmMenuWrap": Object {
+          "height": "100%",
+          "position": "fixed",
+          "top": 0,
+        },
+        "bmMorphShape": Object {
+          "fill": "#373a47",
+        },
+        "bmOverlay": Object {
+          "background": "rgba(14, 1, 1, 0.58)",
+          "left": 0,
+          "top": 0,
+        },
+      }
+    }
+    width={300}
+  >
+    <div>
+      <div
+        className="iconWrapper"
+      >
+        <FontAwesome
+          className="super-crazy-colors"
+          name="sign-in"
+          size="1.5x"
+          style={
+            Object {
+              "padding": "9px",
+              "textShadow": "0 1px 0 rgba(0, 0, 0, 0.1)",
+            }
+          }
+        />
+      </div>
+      <div
+        className="menuItem"
+      >
+        <a
+          id="Log in"
+          key="Log in"
+        >
+          LOG IN
+        </a>
+      </div>
+    </div>
+    <div>
+      <div
+        className="iconWrapper"
+      >
+        <FontAwesome
+          className="super-crazy-colors"
+          name="user-plus"
+          size="1.5x"
+          style={
+            Object {
+              "padding": "9px",
+              "textShadow": "0 1px 0 rgba(0, 0, 0, 0.1)",
+            }
+          }
+        />
+      </div>
+      <div
+        className="menuItem"
+      >
+        <a
+          id="Sign up"
+          key="Sign up"
+        >
+          SIGN UP
+        </a>
+      </div>
+    </div>
+    <div>
+      <div
+        className="iconWrapper"
+      >
+        <FontAwesome
+          className="super-crazy-colors"
+          name="info"
+          size="1.5x"
+          style={
+            Object {
+              "padding": "9px",
+              "textShadow": "0 1px 0 rgba(0, 0, 0, 0.1)",
+            }
+          }
+        />
+      </div>
+      <div
+        className="menuItem"
+      >
+        <a
+          id="Help"
+          key="Help"
+        >
+          HELP
+        </a>
+      </div>
+    </div>
+    <div>
+      <div
+        className="iconWrapper"
+      >
+        <FontAwesome
+          className="super-crazy-colors"
+          name="crosshairs"
+          size="1.5x"
+          style={
+            Object {
+              "padding": "9px",
+              "textShadow": "0 1px 0 rgba(0, 0, 0, 0.1)",
+            }
+          }
+        />
+      </div>
+      <div
+        className="menuItem"
+      >
+        <a
+          id="Become a host"
+          key="Become a host"
+        >
+          BECOME A HOST
+        </a>
+      </div>
+    </div>
+  </Menu>
+</div>
+`;

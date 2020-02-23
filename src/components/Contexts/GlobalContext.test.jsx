@@ -1,20 +1,18 @@
 /* eslint-disable no-undef */
 import React from 'react';
-// import { isMobileOnly } from 'react-device-detect';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
-
-import Header from './Header';
+import { GlobalProvider } from './GlobalContext';
 
 const setup = () => {
-  const wrapper = shallow(<Header />);
+  const wrapper = shallow(<GlobalProvider />);
 
   return { wrapper };
 }
 
-describe('Test App', () => {
-  test('renders without crashing', () => {
+describe('Test GlobalProvider', () => {
+  test('renders GlobalProvider without crashing', () => {
     const { wrapper } = setup();
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
-});
+})
