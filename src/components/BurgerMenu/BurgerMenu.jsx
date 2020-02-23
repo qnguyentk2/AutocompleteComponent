@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import  FontAwesome from 'react-fontawesome';
 // import classNames from 'classnames';
+import RouteLinks from '@const/routes';
 import { MENU_ITEMS } from '@const/common';
 import GlobalContext from '@contexts/GlobalContext';
 import BurgerMenuStyles from './BurgerMenu.scss';
@@ -84,9 +86,9 @@ const BurgerMenu = () => {
                 )
               }
               <div className={BurgerMenuStyles.menuItem}>
-                <a key={item.label} id={item.label}>
+                <Link key={item.label} id={item.label} to={`${RouteLinks.becomeAHost.path}`}>
                   {item.label.toLocaleUpperCase()}
-                </a>
+                </Link>
               </div>
             </div>
           ))
