@@ -12,7 +12,7 @@ exports[`Test Autocomplete renders without crashing 1`] = `
   }
 >
   <div
-    className="Autocomplete"
+    className="Autocomplete darkMode"
   >
     <img
       alt="search"

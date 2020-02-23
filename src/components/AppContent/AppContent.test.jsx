@@ -1,19 +1,24 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router';
 import toJSON from 'enzyme-to-json';
+import AppContent from './AppContent';
 
-import Header from './Header';
 
 const setup = () => {
-  const wrapper = shallow(<Header />);
+  const wrapper = mount(
+    <MemoryRouter>
+      <AppContent />
+    </MemoryRouter>
+  );
 
   return { wrapper };
 }
 
-describe('Test App', () => {
+describe('Test AppContent', () => {
   test('renders without crashing', () => {
     const { wrapper } = setup();
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
-});
+})

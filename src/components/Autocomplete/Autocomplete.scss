@@ -83,7 +83,7 @@
     
     .suggestions li:not(:last-of-type) {
       padding: 17px 21px;
-      color: darkslategray;
+      color: #484848;
     }
   }
 }
@@ -129,10 +129,10 @@
       padding: 17px 21px;
       color: #CDCDCD;
     }
-    
-    .noSuggestions {
-      color: #999;
-      padding: 0.5rem;
-    }
+  }
+
+  .noSuggestions {
+    color: #EBEBEB;
+    padding: 0.5rem;
   }
 }
