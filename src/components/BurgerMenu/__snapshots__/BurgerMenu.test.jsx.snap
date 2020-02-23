@@ -100,12 +100,13 @@ exports[`Test BurgerMenu renders BurgerMenu without crashing 1`] = `
       <div
         className="menuItem"
       >
-        <a
+        <Link
           id="Log in"
           key="Log in"
+          to="/become-a-host"
         >
           LOG IN
-        </a>
+        </Link>
       </div>
     </div>
     <div>
@@ -127,12 +128,13 @@ exports[`Test BurgerMenu renders BurgerMenu without crashing 1`] = `
       <div
         className="menuItem"
       >
-        <a
+        <Link
           id="Sign up"
           key="Sign up"
+          to="/become-a-host"
         >
           SIGN UP
-        </a>
+        </Link>
       </div>
     </div>
     <div>
@@ -154,12 +156,13 @@ exports[`Test BurgerMenu renders BurgerMenu without crashing 1`] = `
       <div
         className="menuItem"
       >
-        <a
+        <Link
           id="Help"
           key="Help"
+          to="/become-a-host"
         >
           HELP
-        </a>
+        </Link>
       </div>
     </div>
     <div>
@@ -181,12 +184,13 @@ exports[`Test BurgerMenu renders BurgerMenu without crashing 1`] = `
       <div
         className="menuItem"
       >
-        <a
+        <Link
           id="Become a host"
           key="Become a host"
+          to="/become-a-host"
         >
           BECOME A HOST
-        </a>
+        </Link>
       </div>
     </div>
   </Menu>
