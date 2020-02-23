@@ -5,7 +5,7 @@ This is an example about an Autocomplete component
 
 ## Authors
 
-* **Quynh Nguyen** - *Initial work* - [PurpleBooth](https://github.com/qnguyentk2/AutocompleteComponent)
+* **Quynh Nguyen** - *Initial work* - [Github](https://github.com/qnguyentk2/AutocompleteComponent)
 
 
 ## Getting Started
@@ -26,13 +26,24 @@ Node: https://nodejs.org/en/download/
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be
-
+With npm 
 ```
-With npm : npm install
-With yarn : yarn install
+npm install
+```
 
-To run on local with npm: npm run dev 
-To run on local with yarn: yarn dev 
+With yarn 
+```
+yarn install
+```
+
+To run on local with npm
+```
+npm run dev 
+```
+
+To run on local with yarn
+```
+yarn dev 
 ```
 
 App will run on
@@ -44,9 +55,14 @@ Live app (heroku) : https://autocomplete-component-app.herokuapp.com/
 
 ## Running the tests
 
+With npm:
 ```
-With npm: npm run test:coverage
-With yarn: yarn test:coverage
+npm run test:coverage
+```
+
+With yarn:
+```
+ yarn test:coverage
 ```
 
 ## Deployment
