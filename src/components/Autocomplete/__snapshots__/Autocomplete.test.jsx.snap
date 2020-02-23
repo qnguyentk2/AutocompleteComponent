@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Autocomplete renders without crashing 1`] = `
+<Autocomplete
+  isLightMode={true}
+  suggestions={
+    Array [
+      "Hồ Chí Minh",
+      "Hội An",
+      "Hà Nội",
+    ]
+  }
+>
+  <div
+    className="Autocomplete"
+  >
+    <img
+      alt="search"
+      src={Object {}}
+    />
+    <input
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+</Autocomplete>
+`;
+
+exports[`Test Autocomplete renders without crashing with dark mode 1`] = `
+<Autocomplete
+  isLightMode={false}
+  suggestions={
+    Array [
+      "Hồ Chí Minh",
+      "Hội An",
+      "Hà Nội",
+    ]
+  }
+>
+  <div
+    className="Autocomplete darkMode"
+  >
+    <img
+      alt="search"
+      src={Object {}}
+    />
+    <input
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+</Autocomplete>
+`;

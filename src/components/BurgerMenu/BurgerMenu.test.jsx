@@ -1,20 +1,19 @@
 /* eslint-disable no-undef */
 import React from 'react';
-// import { isMobileOnly } from 'react-device-detect';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import Header from './Header';
+import BurgerMenu from './BurgerMenu';
 
 const setup = () => {
-  const wrapper = shallow(<Header />);
+  const wrapper = shallow(<BurgerMenu />);
 
   return { wrapper };
 }
 
-describe('Test App', () => {
-  test('renders without crashing', () => {
+describe('Test BurgerMenu', () => {
+  test('renders BurgerMenu without crashing', () => {
     const { wrapper } = setup();
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
-});
+})
