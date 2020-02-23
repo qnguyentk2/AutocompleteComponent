@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test PageLayout renders without crashing 1`] = `
+<div
+  className="BecomeAHost"
+>
+  <p>
+    This it BecomeAHost page
+  </p>
+</div>
+`;

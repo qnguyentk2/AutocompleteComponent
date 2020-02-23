@@ -1,37 +1,27 @@
 import React from 'react';
-import classnames from 'classnames';
-import PropTypes from 'prop-types';
-import Header from '@components/Header/Header';
-import Autocomplete from '@components/Autocomplete/Autocomplete';
+import { Router, Switch } from 'react-router-dom';
+// , withRouter, Route
+import { createBrowserHistory } from 'history';
+// import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary';
+import PageLayout from '@components/PageLayout/PageLayout';
 import { GlobalProvider, GlobalConsumer } from '@contexts/GlobalContext';
-import styles from './styles.scss';
 
-const suggestions = ['Hồ Chí Minh', 'Hội An', 'Hà Nội'];
+const history = createBrowserHistory();
 
 const App = () => (
   <GlobalProvider>
     <GlobalConsumer>
-      {props => {
-        const { isLightMode, isBurgerMenuOpen } = props;
-        return (
-          <div className={classnames(styles.container, isLightMode || isBurgerMenuOpen ? '' : styles.darkMode)}>
-            <Header {...props} />
-            <Autocomplete {...props} suggestions={suggestions} />
-          </div>
-        )
-      }}
+      {props => (
+        <Router history={history}>
+          {/* <ErrorBoundary> */}
+          <Switch>
+            <PageLayout {...props} />
+          </Switch>
+          {/* </ErrorBoundary> */}
+        </Router>
+        )}
     </GlobalConsumer>
   </GlobalProvider>
 );
 
 export default App;
-
-App.propTypes = {
-  isLightMode: PropTypes.bool,
-  isBurgerMenuOpen: PropTypes.bool
-};
-
-App.defaultProps = {
-  isLightMode: true,
-  isBurgerMenuOpen: false
-};
