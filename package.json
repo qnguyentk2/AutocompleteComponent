@@ -50,7 +50,7 @@
     "jest-cli": "^25.1.0",
     "jest-css-modules-transform": "^4.0.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "react-hot-loader": "^4.12.19",
     "react-svg-loader": "^3.0.3",
