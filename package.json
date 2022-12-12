@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "font-awesome-sass": "^4.7.0",
     "history": "^4.10.1",
